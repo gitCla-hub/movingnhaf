@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>movingnhaf</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/tone"></script>
+  <script src="https://unpkg.com/@tonejs/midi"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <div id="landing">
+    <div id="landing-canvas"></div>
+    <div id="landing-ui">
+      <div class="notes">
+        <div class="btn-home"> <- nhaf </div>
+        <div class="btn-instructions">instructions</div>
+        <div class="btn-setting">setting</div>
+      </div>
+
+      <div class="quest">
+        <div id="question">what is home?</div>
+        <input id="typeinput" type="text" placeholder="Type here...">
+        <button id="addBtn">add nodes</button>
+      </div>
+
+      <div class="about">about</div>
+    </div>
+  </div>
+  <div class="moving">moving</div>
+  <div class="home">home</div>
+
+  <div id="overlay-instructions" class="overlay">
+    <div class="overlay-content">
+      <h2>instructions</h2>
+      <div class="close-btn" data-target="overlay-instructions">✕</div>
+      <p>Answer the question in the input field to generate your rhizome, 
+        letting your words grow into connections across the canvas.
+        <br>Press "i" to show the page's message.
+        <br>Press "s" to save the canvas as an image.
+        <br>Press "m" to mute/unmute the sound.</p>
+    </div>
+  </div>
+
+  <div id="overlay-setting" class="overlay">
+    <div class="overlay-content">
+      <h2>settings</h2>
+      <div class="close-btn" data-target="overlay-setting">✕</div>
+      <div class="settings-group">
+        <h3>blend mode</h3>
+          <select id="blend-mode-select">
+            <option value="lightmode">light mode</option>
+            <option value="darkmode">dark mode</option>
+          </select>
+      </div>
+      <div class="settings-group">
+        <h3>volume</h3>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay-about" class="overlay">
+    <div class="overlay-content">
+      <h2>about</h2>
+      <div class="close-btn" data-target="overlay-about">✕</div>
+      <p>This project explores displacement as a state of drifting without ever fully arriving. 
+        Words entered by users become like living particles, scattering, breaking apart, and 
+        reconnecting in unexpected ways. Built with p5.js, the piece uses randomness, motion, 
+        and interactivity to keep the composition alive — particles fade, float, and form new 
+        connections in response to user input. Instead of fixed structures, it creates a shifting 
+        network that grows through interaction, inviting users to experience how identities, memories, 
+        and connections are always in motion, fragile yet continually reforming.</p>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button data-target="wrap1">Page 1</button>
+    <button data-target="wrap2">Page 2</button>
+    <button data-target="wrap3">Page 3</button>
+    <button data-target="wrap4">Page 4</button>
+  </div>
+
+  <div class="content">
+    <div id="wrap1" class="canvas-wrapper">
+      <div id="c1" class="canvas-inner"></div>
+    </div>
+    <div id="wrap2" class="canvas-wrapper">
+      <div id="c2" class="canvas-inner"></div>
+    </div>
+    <div id="wrap3" class="canvas-wrapper">
+      <div id="c3" class="canvas-inner"></div>
+    </div>
+    <div id="wrap4" class="canvas-wrapper">
+      <div id="c4" class="canvas-inner"></div>
+    </div>
+  </div>
+
+  <div id="color-controls-container"></div>
+  <script src="script.js"></script>
+  <script src="page1.js"></script>
+  <script src="page2.js"></script>
+  <script src="page3.js"></script>
+  <script src="page4.js"></script>
+</body>
+</html>
